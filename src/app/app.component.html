@@ -1,0 +1,20 @@
+<!-- <lib-sewers></lib-sewers> -->
+
+<input sewModel type="text" placeholder="Enter Text" ngModel name="searchTerm" [(out)]="test$" [tubing]="tubing"/>
+
+{{tubing.out$ | async}} {{tubing.out$}}
+
+<!-- <div class="count">{{ state.count }}</div> -->
+<div class="countLabel">Count</div>
+<button class="decrement" (click)="values$.next(-1)">
+  <i class="material-icons">
+    remove
+  </i>
+</button>
+<button class="increment" (click)="values$.next(+1)">
+  <i class="material-icons">
+    add
+  </i>
+</button>
+
+<app-card [obs$]="tubing.out$"></app-card>
